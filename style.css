@@ -57,7 +57,7 @@ h1, h2 {
   display: none;
 }
 
-#card-question2 {
+#card-question1 {
   display: none;
 }
 
@@ -89,7 +89,9 @@ h1, h2 {
   color: #CB2F58; 
 }
 
-
+#recommendation {
+  margin-bottom: 2rem;
+}
 
 @media (min-width: 600px) {
   .card {
