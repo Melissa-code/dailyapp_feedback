@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
+
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FEF4EA;
+    font-family: "Hind Madurai", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: #3B2E40;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    overflow-x: hidden;    
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: justify;
+    width: 80%;       
+    margin: 0 auto;  
+    padding: 30px;   
+}
+
+h1 {
+    font-family: "Crimson Text", serif;
+    font-size: 24px;  
+    text-align: start; 
+}
+
+.button-action {
+    background-color: #3B2E40;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: "Hind Madurai", sans-serif;
+    color: #FFFFFF;
+    display: flex;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.8rem 1.5rem;
+}
+
+.button-action:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #3B2E40;
+    color: #3B2E40;
+}
+
+
+@media (min-width: 600px) {
+  .card {
+    width: 100%;    
+    margin: 0 auto;  
+    padding: 40px;   
+    max-width: 600px;  
+  }
+
+  h1 {
+    font-size: 32px; 
+  }
+
+  .button-action {
+    font-size: 18px;
+    padding: 1rem 2rem;
+  }
+}
