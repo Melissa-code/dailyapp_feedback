@@ -14,7 +14,6 @@
     <section id="home">
         <div class="card" id="card-home">
             <h1>Bienvenue sur DailyApp Feedback</h1>
-
             <p>
                 Nous vous invitons à <strong>répondre à un court sondage</strong> sur une application mobile de gestion quotidienne.
                 <br><br>
@@ -28,17 +27,66 @@
 
     <!-- Question 1 -->
     <section id="question1">
+        <div class="card" id="card-question1">
+            <h2>Question 1 - Évaluation globale</h2>
+            <p>
+                Comment évalueriez-vous la qualité de cette application sur une échelle 1 à 5 ? 
+                <br>(1 = très mauvaise, 5 = excellente)
+            </p>
+            <!-- 5 choices (star + btn radio)-->
+            <div class="stars" role="radiogroup" dir="rtl">
+                <input type="radio" id="star5" name="q1_rating" value="5">
+                <label for="star5" aria-label="5 étoiles">★</label>
 
+                <input type="radio" id="star4" name="q1_rating" value="4">
+                <label for="star4" aria-label="4 étoiles">★</label>
+
+                <input type="radio" id="star3" name="q1_rating" value="3">
+                <label for="star3" aria-label="3 étoiles">★</label>
+
+                <input type="radio" id="star2" name="q1_rating" value="2">
+                <label for="star2" aria-label="2 étoiles">★</label>
+
+                <input type="radio" id="star1" name="q1_rating" value="1">
+                <label for="star1" aria-label="1 étoile">★</label>
+            </div>
+
+            <button class="button-action">Question suivante</button>
+        </div>
     </section>
 
     <!-- Question 2 -->
     <section id="question2">
+        <div class="card" id="card-question2">
+            <h2>Question 2 – Recommandation</h2>
+            <p>
+                Recommanderiez-vous cette application à un ami ou un collègue ?
+                <br>Type : Oui / Non    
+            </p>
 
+            <button class="button-action">Question suivante</button>
+        </div>
     </section>
     
     <!-- Question 3 -->
     <section id="question3">
+        <div class="card" id="card-question3">
+            <h2>Question 3 – Fonctionnalités préférées</h2>
+            <p>
+                Quelle fonctionnalité appréciez-vous le plus dans l’application ?
+                Type : Choix multiple (on peut sélectionner une seule option)
 
+                Gestion des tâches
+
+                Rappels et notifications
+
+                Organisation de calendrier
+
+                Autre (option texte libre)
+            </p>
+
+            <button class="button-action">Afficher les résultats</button>
+        </div>
     </section>
     
     <!-- Results -->

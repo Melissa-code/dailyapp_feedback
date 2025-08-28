@@ -29,7 +29,7 @@ body {
     padding: 30px;   
 }
 
-h1 {
+h1, h2 {
     font-family: "Crimson Text", serif;
     font-size: 24px;  
     text-align: start; 
@@ -52,6 +52,43 @@ h1 {
     border: 1px solid #3B2E40;
     color: #3B2E40;
 }
+
+#card-home {
+  display: none;
+}
+
+#card-question2 {
+  display: none;
+}
+
+#card-question3 {
+  display: none;
+}
+
+/* stars */
+
+.stars {
+  display: inline-flex;
+  gap: .5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stars input {
+  position: absolute;
+  left: -9999px; /* hide btn radios */
+}
+
+.stars label {
+  cursor: pointer;
+  color: #d4c9d9;
+  transition: color 0.1s ease;
+}
+
+.stars input:checked ~ label {
+  color: #CB2F58; 
+}
+
 
 
 @media (min-width: 600px) {
