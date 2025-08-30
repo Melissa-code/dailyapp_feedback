@@ -64,10 +64,10 @@
             </p>
 
             <div id="recommendation">
-                <input type="radio" id="rec-yes" name="q2_recommend" value="Yes">
+                <input type="radio" id="rec-yes" name="q2_recommend" value="yes_q2">
                 <label for="rec-yes">Oui</label><br>
 
-                <input type="radio" id="rec-no" name="q2_recommend" value="No">
+                <input type="radio" id="rec-no" name="q2_recommend" value="no_q2">
                 <label for="rec-no">Non</label>
             </div>
 
@@ -78,21 +78,40 @@
     <!-- Question 3 -->
     <section id="question3">
         <div class="card" id="card-question3">
-            <h2>Question 3 – Fonctionnalités préférées</h2>
-            <p>
-                Quelle fonctionnalité appréciez-vous le plus dans l’application ?
-                Type : Choix multiple (on peut sélectionner une seule option)
+            <!-- Form Q3 -->
+            <form id="favorite-form">
+                <fieldset id="favorite-functionalities">
+                    <legend>Choisissez vos fonctionnalités préférées</legend>
 
-                Gestion des tâches
+                    <h2>Question 3 - Fonctionnalités préférées</h2>
+                    <p>
+                        Quelle fonctionnalité appréciez-vous le plus dans l'application ?
+                        <br> (Choix multiples)
+                    </p>
 
-                Rappels et notifications
+                    <label>
+                        <input type="checkbox" name="feature" value="Task Management">
+                        Gestion des tâches
+                    </label>
 
-                Organisation de calendrier
+                    <label>
+                        <input type="checkbox" name="feature" value="Reminders Notifications">
+                        Rappels et notifications
+                    </label>
 
-                Autre (option texte libre)
-            </p>
+                    <label>
+                        <input type="checkbox" name="feature" value="Calendar Organization">
+                        Organisation de calendrier
+                    </label>
 
-            <button class="button-action">Afficher les résultats</button>
+                    <label>
+                        <input type="checkbox" name="feature" value="Other">
+                        Autre: <input type="text" name="feature_other" placeholder="Spécifier">
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="button-action">Afficher les résultats</button>
+            </form>
         </div>
     </section>
     
