@@ -67,11 +67,11 @@ h1, h2 {
   display: none;
 }
 
-#card-question1 {
+#card-question2 {
   display: none;
 }
 
-#card-question2 {
+#card-question3 {
   display: none;
 }
 
@@ -99,7 +99,7 @@ h1, h2 {
   color: #CB2F58; 
 }
 
-#recommendation, #favorite-functionalities{
+#favorite-functionalities{
   margin-bottom: 2rem;
 }
 
