@@ -29,16 +29,6 @@ legend {
   display: none; 
 }
 
-.card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    text-align: justify;
-    width: 80%;       
-    margin: 0 auto;  
-    padding: 30px;   
-}
-
 h1, h2 {
     font-family: "Crimson Text", serif;
     font-size: 24px;  
@@ -63,15 +53,24 @@ h1, h2 {
     color: #3B2E40;
 }
 
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    width: 80%;       
+    margin: 0 auto;  
+    padding: 30px;   
+}
+
 #card-home {
   display: none;
 }
 
-#card-question2 {
+#card-question1 {
   display: none;
 }
 
-#card-question3 {
+#card-question2 {
   display: none;
 }
 
@@ -99,7 +98,17 @@ h1, h2 {
   color: #CB2F58; 
 }
 
-#favorite-functionalities{
+#recommendation-options label {
+  display: block;        
+  margin-bottom: 0.5rem; 
+}
+
+#recommendation-options input {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#recommendation-options, #favorite-functionalities{
   margin-bottom: 2rem;
 }
 
@@ -108,6 +117,10 @@ h1, h2 {
   align-items: center;    
   gap: 0.5rem;            
   margin-bottom: 5px;    
+}
+
+#favorite-functionalities input {  
+  cursor: pointer;
 }
 
 

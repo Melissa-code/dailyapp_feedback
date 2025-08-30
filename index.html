@@ -32,7 +32,7 @@
                 <fieldset id="global-satisfaction">
                     <legend>Votre évaluation globale</legend>
                     
-                    <h2>Question 1 - Évaluation globale</h2>
+                    <h2>Question 1 : Évaluation globale</h2>
                     <p>
                         Comment évalueriez-vous la qualité de cette application sur une échelle 1 à 5 ? 
                         <br>(1 = très mauvaise, 5 = excellente)
@@ -69,20 +69,22 @@
                 <fieldset id="recommendation">
                     <legend>Votre recommandation</legend>
 
-                    <h2>Question 2 – Recommandation</h2>
+                    <h2>Question 2 : Recommandation</h2>
                     <p>
                         Recommanderiez-vous cette application à un ami ou un collègue ? 
                     </p>
 
-                    <label>
-                        <input type="radio" name="q2_recommend" value="yes_q2" required>
-                        Oui
-                    </label>
+                    <div id="recommendation-options">
+                        <label for="yes_q2">
+                            <input type="radio" id="yes_q2" name="q2_recommend" value="yes_q2" required>
+                            Oui
+                        </label>
 
-                    <label>
-                        <input type="radio" name="q2_recommend" value="no_q2">
-                        Non
-                    </label>
+                        <label for="no_q2">
+                            <input type="radio" id="no_q2" name="q2_recommend" value="no_q2">
+                            Non
+                        </label>
+                    </div>
                 </fieldset>
 
                 <button type="submit" class="button-action">Question suivante</button>
@@ -98,29 +100,29 @@
                 <fieldset id="favorite-functionalities">
                     <legend>Choisissez vos fonctionnalités préférées</legend>
 
-                    <h2>Question 3 - Fonctionnalités préférées</h2>
+                    <h2>Question 3 : Fonctionnalités préférées</h2>
                     <p>
                         Quelle fonctionnalité appréciez-vous le plus dans l'application ?
                         <br> (Choix multiples)
                     </p>
 
-                    <label>
-                        <input type="checkbox" name="feature" value="Task Management">
+                    <label for="task_management">
+                        <input type="checkbox" id="task_management" name="feature" value="task_management">
                         Gestion des tâches
                     </label>
 
-                    <label>
-                        <input type="checkbox" name="feature" value="Reminders Notifications">
+                    <label for="reminders_notifications">
+                        <input type="checkbox" id="reminders_notifications" name="feature" value="reminders_notifications">
                         Rappels et notifications
                     </label>
 
-                    <label>
-                        <input type="checkbox" name="feature" value="Calendar Organization">
+                    <label for="calendar_organization">
+                        <input type="checkbox" id="calendar_organization" name="feature" value="calendar_organization">
                         Organisation de calendrier
                     </label>
 
-                    <label>
-                        <input type="checkbox" name="feature" value="Other">
+                    <label for="other_feature">
+                        <input type="checkbox" id="other_feature" name="feature" value="other_feature">
                         Autre: <input type="text" name="feature_other" placeholder="Spécifier">
                     </label>
                 </fieldset>
