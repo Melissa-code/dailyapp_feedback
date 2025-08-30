@@ -19,17 +19,17 @@ body {
     padding: 0 1rem;
 }
 
-.card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    text-align: justify;
-    width: 80%;       
-    margin: 0 auto;  
-    padding: 30px;   
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-h1 {
+legend {
+  display: none; 
+}
+
+h1, h2 {
     font-family: "Crimson Text", serif;
     font-size: 24px;  
     text-align: start; 
@@ -51,6 +51,76 @@ h1 {
     background-color: #FFFFFF;
     border: 1px solid #3B2E40;
     color: #3B2E40;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    width: 80%;       
+    margin: 0 auto;  
+    padding: 30px;   
+}
+
+#card-home {
+  display: none;
+}
+
+#card-question1 {
+  display: none;
+}
+
+#card-question2 {
+  display: none;
+}
+
+/* stars question 1 */
+
+.stars {
+  display: inline-flex;
+  gap: .5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stars input {
+  position: absolute;
+  left: -9999px; /* hide btn radios */
+}
+
+.stars label {
+  cursor: pointer;
+  color: #d4c9d9;
+  transition: color 0.1s ease;
+}
+
+.stars input:checked ~ label {
+  color: #CB2F58; 
+}
+
+#recommendation-options label {
+  display: block;        
+  margin-bottom: 0.5rem; 
+}
+
+#recommendation-options input {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#recommendation-options, #favorite-functionalities{
+  margin-bottom: 2rem;
+}
+
+#favorite-functionalities label {
+  display: flex;          
+  align-items: center;    
+  gap: 0.5rem;            
+  margin-bottom: 5px;    
+}
+
+#favorite-functionalities input {  
+  cursor: pointer;
 }
 
 

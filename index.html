@@ -14,7 +14,6 @@
     <section id="home">
         <div class="card" id="card-home">
             <h1>Bienvenue sur DailyApp Feedback</h1>
-
             <p>
                 Nous vous invitons à <strong>répondre à un court sondage</strong> sur une application mobile de gestion quotidienne.
                 <br><br>
@@ -22,23 +21,115 @@
                 <br><br>
             </p>
 
-            <button class="button-action">Commencer le questionnaire</button>
+            <button type="button" class="button-action">Commencer le questionnaire</button>
         </div>
     </section>
 
     <!-- Question 1 -->
     <section id="question1">
+        <div class="card" id="card-question1">
+            <form id="satisfaction-form">
+                <fieldset id="global-satisfaction">
+                    <legend>Votre évaluation globale</legend>
+                    
+                    <h2>Question 1 : Évaluation globale</h2>
+                    <p>
+                        Comment évalueriez-vous la qualité de cette application sur une échelle 1 à 5 ? 
+                        <br>(1 = très mauvaise, 5 = excellente)
+                    </p>
 
+                    <!-- 5 choices (star + btn radio)-->
+                    <div class="stars" role="radiogroup" dir="rtl">
+                        <input type="radio" id="star5" name="q1_rating" value="5">
+                        <label for="star5" aria-label="5 étoiles">★</label>
+
+                        <input type="radio" id="star4" name="q1_rating" value="4">
+                        <label for="star4" aria-label="4 étoiles">★</label>
+
+                        <input type="radio" id="star3" name="q1_rating" value="3">
+                        <label for="star3" aria-label="3 étoiles">★</label>
+
+                        <input type="radio" id="star2" name="q1_rating" value="2">
+                        <label for="star2" aria-label="2 étoiles">★</label>
+
+                        <input type="radio" id="star1" name="q1_rating" value="1">
+                        <label for="star1" aria-label="1 étoile">★</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="button-action">Question suivante</button>
+            </form>
+        </div>
     </section>
 
     <!-- Question 2 -->
     <section id="question2">
+        <div class="card" id="card-question2">
+            <form id="recommendation-form">
+                <fieldset id="recommendation">
+                    <legend>Votre recommandation</legend>
 
+                    <h2>Question 2 : Recommandation</h2>
+                    <p>
+                        Recommanderiez-vous cette application à un ami ou un collègue ? 
+                    </p>
+
+                    <div id="recommendation-options">
+                        <label for="yes_q2">
+                            <input type="radio" id="yes_q2" name="q2_recommend" value="yes_q2" required>
+                            Oui
+                        </label>
+
+                        <label for="no_q2">
+                            <input type="radio" id="no_q2" name="q2_recommend" value="no_q2">
+                            Non
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="button-action">Question suivante</button>
+            </form>
+        </div>
     </section>
     
     <!-- Question 3 -->
     <section id="question3">
+        <div class="card" id="card-question3">
+            <!-- Form Q3 -->
+            <form id="favorite-form">
+                <fieldset id="favorite-functionalities">
+                    <legend>Choisissez vos fonctionnalités préférées</legend>
 
+                    <h2>Question 3 : Fonctionnalités préférées</h2>
+                    <p>
+                        Quelle fonctionnalité appréciez-vous le plus dans l'application ?
+                        <br> (Choix multiples)
+                    </p>
+
+                    <label for="task_management">
+                        <input type="checkbox" id="task_management" name="feature" value="task_management">
+                        Gestion des tâches
+                    </label>
+
+                    <label for="reminders_notifications">
+                        <input type="checkbox" id="reminders_notifications" name="feature" value="reminders_notifications">
+                        Rappels et notifications
+                    </label>
+
+                    <label for="calendar_organization">
+                        <input type="checkbox" id="calendar_organization" name="feature" value="calendar_organization">
+                        Organisation de calendrier
+                    </label>
+
+                    <label for="other_feature">
+                        <input type="checkbox" id="other_feature" name="feature" value="other_feature">
+                        Autre: <input type="text" name="feature_other" placeholder="Spécifier">
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="button-action">Afficher les résultats</button>
+            </form>
+        </div>
     </section>
     
     <!-- Results -->
