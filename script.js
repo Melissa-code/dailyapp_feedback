@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showCurrentSection(); // at first display home section
 
   /**
-   * Histogramme pour visualiser les résultats de la question 1
+   * Histogramme vertical pour visualiser les résultats de la question 1
    * @param {*} rating 
    */
   function renderQ1Chart(rating) {
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         datasets: [{
           label: 'Votre note' + (rating ? `: ${rating}/5` : ''),
           data: values, // values 
-          backgroundColor: '#CB2F58'
+          backgroundColor: '#8A5082'
         }]
       },
       options: {
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         labels: ['Oui', 'Non'],
         datasets: [{
           data: values,
-          backgroundColor: ['#7bdcb5', '#9b51e0']
+          backgroundColor: ['#7bdcb5', '#CB2F58']
         }]
       },
       options: {
@@ -154,6 +154,64 @@ document.addEventListener("DOMContentLoaded", () => {
           legend: {
             position: 'bottom'
           }
+        }
+      }
+    });
+  }
+
+  /**
+   * Histogramme horizontal pour visualiser les résultats de la question 3
+   * @param {*} features 
+   */
+  function renderQ3BarChart(features) {
+    const ctx = document.getElementById('q3Chart').getContext('2d');
+
+    // mapping entre features values and labels 
+    const featureMapping = {
+      'task_management': 'Gestion des tâches',
+      'reminders_notifications': 'Rappels et notifications', 
+      'calendar_organization': 'Organisation de calendrier',
+      'other_feature': 'Autre'
+    };
+    
+    const labels = Object.values(featureMapping);
+    // Pour chaque label on calcule une valeur 0 ou 1
+    const values = labels.map(label => {
+      // Convertit l'objet en tableau de paires [clé, valeur] et some() teste si au moins un élément respecte la condition
+      const isIncluded = Object.entries(featureMapping).some(([key, value]) => 
+        value === label && features.includes(key)
+      );
+      console.log(`Label: "${label}" - Inclus: ${isIncluded}`);
+      return isIncluded ? 1 : 0;
+    });
+    console.log("Values pour le graphique:", values);
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Fonctionnalités choisies',
+          data: values,
+          backgroundColor: '#fcb900'
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false, 
+        layout: {
+          padding: 10
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            max: 1,
+            ticks: { stepSize: 1 }
+          }
+        },
+        plugins: {
+          legend: { display: false }
         }
       }
     });
@@ -230,6 +288,8 @@ document.addEventListener("DOMContentLoaded", () => {
           renderQ1Chart(answers.q1);
           answers.q2 = getQ2Recommendation();
           renderQ2PieChart(answers.q2);
+          answers.q3 = getQ3Features();
+          renderQ3BarChart(answers.q3);
           
         } else {
           //Error

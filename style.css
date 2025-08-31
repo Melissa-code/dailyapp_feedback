@@ -137,8 +137,11 @@ section {
   max-height: 200px;    
   width: 100%;           
   height: auto;
-  /* margin: 0 auto;       
-  display: block; */
+}
+
+#q3Chart {
+  height: 200px; 
+  max-height: 200px;
 }
 
 @media (min-width: 600px) {
