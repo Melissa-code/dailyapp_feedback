@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function getQ1Rating() {
     const selected = document.querySelector('input[name="q1_rating"]:checked');
-    console.log("Note d'évaluation:", selected ? selected.value + "/5" : "None");
 
     return selected ? selected.value : null;
   }
@@ -41,8 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function getQ2Recommendation() {
     const selected = document.querySelector('input[name="q2_recommend"]:checked');
-    console.log("Recommanderiez-vous l'application:", selected ? selected.value : null);
-    
+
     return selected ? selected.value : null;
   }
 
@@ -71,9 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (otherFeature && otherFeature.value.trim()) {
         featuresChecked.push(otherFeature.value.trim());
       }
-
-      console.log("Fonctionnalités sélectionnées:", featuresChecked);
-      console.log("Autre fonctionnalité:", otherFeature);
 
       return featuresChecked;
   }
@@ -186,10 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const isIncluded = Object.entries(featureMapping).some(([key, value]) => 
         value === label && features.includes(key)
       );
-      console.log(`Label: "${label}" - Inclus: ${isIncluded}`);
+
       return isIncluded ? 1 : 0;
     });
-    console.log("Values pour le graphique:", values);
 
     new Chart(ctx, {
       type: 'bar',
@@ -242,8 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         answers.q1 = getQ1Rating();
 
         if (answers.q1) {
-            resultQ1.textContent = answers.q1 + "/5";
-            console.log(answers);
+            resultQ1.textContent = answers.q1 + "/5";            
             currentIndex++;
             showCurrentSection();
         } else {
@@ -251,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const q1ErrorMessage = currentSection.querySelector(".error-message");
             q1ErrorMessage.textContent = "Veuillez sélectionner une note avant de continuer.";
             q1ErrorMessage.style.display = "flex";
+
             return; 
         }
 
@@ -259,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         answers.q2 = getQ2Recommendation();
         if (answers.q2) {
           resultQ2.textContent = answers.q2 === "yes_q2" ? "Oui" : "Non";
-          console.log(answers);
           currentIndex++;
           showCurrentSection();
         } else {
@@ -267,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const q2ErrorMessage = currentSection.querySelector(".error-message");
           q2ErrorMessage.textContent = "Veuillez sélectionner une réponse avant de continuer.";
           q2ErrorMessage.style.display = "flex";
+
           return;
         }
 
@@ -279,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const q3ErrorMessage = currentSection.querySelector(".error-message");
           q3ErrorMessage.textContent = "Veuillez renseigner le champ 'Autre' ou décochez cette option.";
           q3ErrorMessage.style.display = "flex";
+
           return;
 
          } else if (answers.q3 === "error_other_not_checked") {
@@ -287,12 +282,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const q3ErrorMessage = currentSection.querySelector(".error-message");
           q3ErrorMessage.textContent = "Veuillez cocher 'Autre' pour valider votre saisie ou vider le champ.";
           q3ErrorMessage.style.display = "flex";
+
           return;
 
         } else if (answers.q3.length > 0) {
           // success
           resultQ3.textContent = answers.q3.join(", ");
-          console.log(answers);
           currentIndex++;
           showCurrentSection();
 
@@ -320,5 +315,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 });
