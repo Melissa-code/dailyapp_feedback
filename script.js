@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         labels: ['1 ★', '2 ★', '3 ★', '4 ★', '5 ★'],
         datasets: [{
           label: 'Votre note' + (rating ? `: ${rating}/5` : ''),
-          data: values,  //données réelles renseignées par le user 
+          data: values, // values 
           backgroundColor: '#CB2F58'
         }]
       },
@@ -121,9 +121,38 @@ document.addEventListener("DOMContentLoaded", () => {
         scales: {
           y: {
             beginAtZero: true,
-            ticks: {
-              stepSize: 1
-            }
+            ticks: { stepSize: 1 }
+          }
+        }
+      }
+    });
+  }
+
+  /**
+   * Camembert pour visualiser les résultats de la question 2
+   * @param {*} answer 
+   */
+  function renderQ2PieChart(answer) {
+    const ctx = document.getElementById('q2Chart').getContext('2d');
+    let values = [0, 0];
+    if (answer === "yes_q2") values[0] = 1;
+    if (answer === "no_q2") values[1] = 1;
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Oui', 'Non'],
+        datasets: [{
+          data: values,
+          backgroundColor: ['#7bdcb5', '#9b51e0']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
           }
         }
       }
@@ -199,6 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // tous les graphiques
           answers.q1 = parseInt(getQ1Rating(), 10);
           renderQ1Chart(answers.q1);
+          answers.q2 = getQ2Recommendation();
+          renderQ2PieChart(answers.q2);
+          
         } else {
           //Error
           const currentSection = document.getElementById("question3");
