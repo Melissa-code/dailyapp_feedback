@@ -96,6 +96,41 @@ document.addEventListener("DOMContentLoaded", () => {
   showCurrentSection(); // at first display home section
 
   /**
+   * Histogramme pour visualiser les résultats de la question 1
+   * @param {*} rating 
+   */
+  function renderQ1Chart(rating) {
+    const ctx = document.getElementById('q1Chart').getContext('2d');
+    let values = [0, 0, 0, 0, 0];
+    if (rating >= 1 && rating <= 5) {
+    values[rating - 1] = 1;
+  }
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['1 ★', '2 ★', '3 ★', '4 ★', '5 ★'],
+        datasets: [{
+          label: 'Votre note' + (rating ? `: ${rating}/5` : ''),
+          data: values,  //données réelles renseignées par le user 
+          backgroundColor: '#CB2F58'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+  }
+
+  /**
    * Gestionnaire d'événements pour tous les boutons "Suivant"
    * Gère la navigation, la validation et la sauvegarde des réponses
    */
@@ -161,6 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
           currentIndex++;
           showCurrentSection();
 
+          // tous les graphiques
+          answers.q1 = parseInt(getQ1Rating(), 10);
+          renderQ1Chart(answers.q1);
         } else {
           //Error
           const currentSection = document.getElementById("question3");
