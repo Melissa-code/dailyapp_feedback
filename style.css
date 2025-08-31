@@ -30,6 +30,13 @@ h1, h2 {
     text-align: start; 
 }
 
+.error-message {
+  color: #CB2F58;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: none;
+}
+
 .next-btn {
     background-color: #3B2E40;
     border-radius: 30px;
