@@ -18,6 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return selected ? selected.value : null;
   }
 
+  function getQ2Recommendation() {
+    const selected = document.querySelector('input[name="q2_recommend"]:checked');
+    console.log("Recommanderiez-vous l'application:", selected ? selected.value : null);
+    
+    return selected ? selected.value : null;
+  }
+
   function showCurrentSection() {
     sections.forEach((id, index) => {
         document.getElementById(id).style.display = (index === currentIndex) ? "flex" : "none";
@@ -33,7 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentIndex === 1) {
           answers.q1 = getQ1Rating();
           console.log(answers);
-        }
+        } else if (currentIndex === 2) {
+          answers.q2 = getQ2Recommendation();
+          console.log(answers);
+        } 
 
         currentIndex++;
         if (currentIndex >= sections.length) currentIndex = sections.length - 1; 
