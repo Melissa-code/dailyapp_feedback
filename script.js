@@ -61,6 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (otherCheckbox && (!otherFeature || !otherFeature.value.trim())) {
         return "error_other_is_empty";
       }
+
+      // Validation si "Autre" est rempli mais checkbox pas cochée
+      if (!otherCheckbox && otherFeature && otherFeature.value.trim()) {
+        return "error_other_not_checked";
+      }
       
       // Ajouter le contenu du champ "Autre" s'il est renseigné
       if (otherFeature && otherFeature.value.trim()) {
@@ -269,10 +274,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Validation et navigation Q3 à results 
         answers.q3 = getQ3Features(); 
         if (answers.q3 === "error_other_is_empty") {
-          //  "Autre" coché mais champ vide
+          // "Autre" coché mais champ vide
           const currentSection = document.getElementById("question3");
           const q3ErrorMessage = currentSection.querySelector(".error-message");
           q3ErrorMessage.textContent = "Veuillez renseigner le champ 'Autre' ou décochez cette option.";
+          q3ErrorMessage.style.display = "flex";
+          return;
+
+         } else if (answers.q3 === "error_other_not_checked") {
+          // "Autre" rempli mais pas coché 
+          const currentSection = document.getElementById("question3");
+          const q3ErrorMessage = currentSection.querySelector(".error-message");
+          q3ErrorMessage.textContent = "Veuillez cocher 'Autre' pour valider votre saisie ou vider le champ.";
           q3ErrorMessage.style.display = "flex";
           return;
 
