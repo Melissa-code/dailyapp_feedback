@@ -146,18 +146,30 @@
         <div class="card" id="card-result">
             <h2>Résultats</h2>
             <p>Merci pour vos réponses. Voici le récapitulatif:</p>
-            <ul>
+            <ul id="results-list">
                 <li>Question 1- Évaluation: <span id="result-q1"></span></li>
                 <li>Question 2- Recommandation: <span id="result-q2"></span></li>
                 <li>Question 3- Fonctionnalités préférées: <span id="result-q3"></span></li>
-            </ul>
+            </ul> 
 
-            <!-- histogram vertical Q1 -->
-            <canvas id="q1Chart"></canvas>
-            <!-- Pie Q2 -->
-            <canvas id="q2Chart"></canvas>
-            <!-- histogram horizontal Q3 -->
-            <canvas id="q3Chart"></canvas>
+           <div id="chart1-chart2">
+                <div>
+                    <!-- vertical histogram Q1 -->
+                    <h3>Évaluation globale :</h3>
+                    <canvas id="q1Chart"></canvas>
+                </div>
+                <div>
+                    <!-- Pie Q2 -->
+                    <h3>Recommandation :</h3>
+                    <canvas id="q2Chart"></canvas>
+                </div>
+            </div>
+           
+            <div id="chart3">
+                <!-- horizontal histogram Q3 -->
+                <h3>Fonctionnalités préférées :</h3>
+                <canvas id="q3Chart"></canvas>
+            </div>
         </div>
     </section>
 

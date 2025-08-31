@@ -14,6 +14,28 @@ body {
   font-weight: 200;
 }
 
+h1, h2, h3 {
+  font-family: "Crimson Text", serif;
+}
+
+h1, h2 {
+  font-size: 24px;  
+  text-align: start; 
+}
+
+h3 {
+  text-align: start;
+  font-size: 20px;
+}
+
+section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 20px 0;
+}
+
 fieldset {
   border: none;
   padding: 0;
@@ -24,17 +46,13 @@ legend {
   display: none; 
 }
 
-h1, h2 {
-    font-family: "Crimson Text", serif;
-    font-size: 24px;  
-    text-align: start; 
-}
-
-.error-message {
-  color: #CB2F58;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: none;
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    width: 80%;       
+    margin: 0 15px;  
+    padding: 30px;   
 }
 
 .next-btn {
@@ -55,28 +73,20 @@ h1, h2 {
     color: #3B2E40;
 }
 
-.card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    width: 80%;       
-    margin: 0 15px;  
-    padding: 30px;   
+.error-message {
+  color: #CB2F58;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: none;
 }
 
-section {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;   
-}
+/* home */
 
 #home {
     display: flex;
 }
 
-
-/* stars question 1 */
+/* Q1 stars question 1 */
 
 .stars {
   display: inline-flex;
@@ -100,6 +110,8 @@ section {
   color: #CB2F58; 
 }
 
+/* Q2 question 2 */
+
 #recommendation-options label {
   display: block;        
   margin-bottom: 0.5rem; 
@@ -114,6 +126,8 @@ section {
   margin-bottom: 2rem;
 }
 
+/* Q3 functionalities question 3 */
+
 #favorite-functionalities label {
   display: flex;          
   align-items: center;    
@@ -125,6 +139,8 @@ section {
   cursor: pointer;
 }
 
+/* graphs */
+
 #q1Chart {
   max-width: 300px;     
   max-height: 200px;    
@@ -133,16 +149,39 @@ section {
 }
 
 #q2Chart {
-  max-width: 200px;     
-  max-height: 200px;    
+  max-width: 160px;     
+  max-height: 160px;    
   width: 100%;           
   height: auto;
 }
 
 #q3Chart {
-  height: 200px; 
+  height: 160px; 
   max-height: 200px;
 }
+
+#chart1-chart2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+#chart1-chart2 > div {
+  width: 100%;
+  text-align: center;
+}
+
+#chart3 {
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
+#results-list {
+  display: none;
+}
+
 
 @media (min-width: 600px) {
   .card {
@@ -163,5 +202,27 @@ section {
 
   .card {  
     margin: 0 auto;  
+    padding: 20px;
+  }
+
+  #q1Chart, #q2Chart {
+  max-width: 250px;
+  max-height: 150px;
+  }
+  
+  #q3Chart {
+    height: 120px;
+    max-height: 150px;
+  }
+
+  #chart1-chart2 {
+    flex-direction: row; 
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  #chart1-chart2 > div {
+    flex: 1;
+    max-width: 300px; 
   }
 }

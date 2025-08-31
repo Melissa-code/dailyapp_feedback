@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
           currentIndex++;
           showCurrentSection();
 
-          // tous les graphiques
+          // graphiques montrant les résultats
           answers.q1 = parseInt(getQ1Rating(), 10);
           renderQ1Chart(answers.q1);
           answers.q2 = getQ2Recommendation();
