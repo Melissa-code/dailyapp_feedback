@@ -30,14 +30,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function getQ3Features() {
       // Array.from: NodeList converti en tableau -> map() pour le parcourir
       const featuresChecked = Array.from(document.querySelectorAll('input[name="feature"]:checked')).map(input => input.value);
-      const otherFeature = document.querySelector('input[name="feature_other"]').value.trim();
+      const otherCheckbox = document.querySelector('input[value="other_feature"]:checked');
+      const otherFeature = document.querySelector('input[name="feature_other"]'); 
       
-      if (otherFeature) featuresChecked.push(otherFeature);
+      if (otherCheckbox && (!otherFeature || !otherFeature.value.trim())) {
+        return "error_other_is_empty";
+      }
+      
+      if (otherFeature && otherFeature.value.trim()) {
+        featuresChecked.push(otherFeature.value.trim());
+      }
 
       console.log("Fonctionnalités sélectionnées:", featuresChecked);
       console.log("Autre fonctionnalité:", otherFeature);
 
       return featuresChecked;
+  }
+
+  function clearErrorMessages() {
+    document.querySelectorAll(".error-message").forEach(msg => {
+      msg.textContent = "";
+      msg.style.display = "none";
+    });
   }
 
   function showCurrentSection() {
@@ -51,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".next-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const errorMessage = document.querySelector(".error-message");
-      errorMessage.textContent = "";
-      errorMessage.style.display = "none";
+      clearErrorMessages(); 
 
       if (currentIndex === 0) {
         currentIndex++;
@@ -92,8 +104,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
       } else if (currentIndex === 3) {
-        answers.q3 = getQ3Features();
-        console.log(answers);
+        answers.q3 = getQ3Features(); 
+        if (answers.q3 === "error_other_is_empty") {
+          const currentSection = document.getElementById("question3");
+          const q3ErrorMessage = currentSection.querySelector(".error-message");
+          q3ErrorMessage.textContent = "Veuillez renseigner le champ 'Autre' ou décochez cette option.";
+          q3ErrorMessage.style.display = "flex";
+          return;
+
+        } else if (answers.q3.length > 0) {
+          resultQ3.textContent = answers.q3.join(", ");
+          console.log(answers);
+          currentIndex++;
+          showCurrentSection();
+
+        } else {
+          const currentSection = document.getElementById("question3");
+          const q3ErrorMessage = currentSection.querySelector(".error-message");
+          q3ErrorMessage.textContent = "Veuillez sélectionner au moins une fonctionnalité avant de continuer.";
+          q3ErrorMessage.style.display = "flex";
+        }
         
       } else {
         currentIndex++;
@@ -103,5 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
   });
-
 });
