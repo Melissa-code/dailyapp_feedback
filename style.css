@@ -7,16 +7,11 @@ html, body {
 }
 
 body {
-    background-color: #FEF4EA;
-    font-family: "Hind Madurai", sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-    color: #3B2E40;
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    overflow-x: hidden;    
-    padding: 0 1rem;
+  font-family: "Hind Madurai", sans-serif;
+  background-color: #FEF4EA;
+  color: #3B2E40;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 fieldset {
@@ -35,7 +30,14 @@ h1, h2 {
     text-align: start; 
 }
 
-.button-action {
+.error-message {
+  color: #CB2F58;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.next-btn {
     background-color: #3B2E40;
     border-radius: 30px;
     font-weight: 600;
@@ -47,7 +49,7 @@ h1, h2 {
     padding: 0.8rem 1.5rem;
 }
 
-.button-action:hover {
+.next-btn:hover {
     background-color: #FFFFFF;
     border: 1px solid #3B2E40;
     color: #3B2E40;
@@ -58,21 +60,21 @@ h1, h2 {
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     width: 80%;       
-    margin: 0 auto;  
+    margin: 0 15px;  
     padding: 30px;   
 }
 
-#card-home {
+section {
   display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;   
 }
 
-#card-question1 {
-  display: none;
+#home {
+    display: flex;
 }
 
-#card-question2 {
-  display: none;
-}
 
 /* stars question 1 */
 
@@ -132,12 +134,16 @@ h1, h2 {
     max-width: 600px;  
   }
 
-  h1 {
+  h1, h2 {
     font-size: 32px; 
   }
 
-  .button-action {
+  .next-btn {
     font-size: 18px;
     padding: 1rem 2rem;
+  }
+
+  .card {  
+    margin: 0 auto;  
   }
 }

@@ -21,12 +21,13 @@
                 <br><br>
             </p>
 
-            <button type="button" class="button-action">Commencer le questionnaire</button>
+            <button type="button" class="next-btn">Commencer le questionnaire</button>
         </div>
     </section>
 
     <!-- Question 1 -->
     <section id="question1">
+        <!-- Card Question 1 -->
         <div class="card" id="card-question1">
             <form id="satisfaction-form">
                 <fieldset id="global-satisfaction">
@@ -37,6 +38,9 @@
                         Comment évalueriez-vous la qualité de cette application sur une échelle 1 à 5 ? 
                         <br>(1 = très mauvaise, 5 = excellente)
                     </p>
+
+                    <!-- Error message -->
+                    <div class="error-message"></div>
 
                     <!-- 5 choices (star + btn radio)-->
                     <div class="stars" role="radiogroup" dir="rtl">
@@ -57,7 +61,7 @@
                     </div>
                 </fieldset>
 
-                <button type="submit" class="button-action">Question suivante</button>
+                <button type="button" class="next-btn">Question suivante</button>
             </form>
         </div>
     </section>
@@ -70,9 +74,10 @@
                     <legend>Votre recommandation</legend>
 
                     <h2>Question 2 : Recommandation</h2>
-                    <p>
-                        Recommanderiez-vous cette application à un ami ou un collègue ? 
-                    </p>
+                    <p>Recommanderiez-vous cette application à un ami ou un collègue ? </p>
+
+                    <!-- Error message -->
+                    <div class="error-message"></div>
 
                     <div id="recommendation-options">
                         <label for="yes_q2">
@@ -87,7 +92,7 @@
                     </div>
                 </fieldset>
 
-                <button type="submit" class="button-action">Question suivante</button>
+                <button type="button" class="next-btn">Question suivante</button>
             </form>
         </div>
     </section>
@@ -105,6 +110,9 @@
                         Quelle fonctionnalité appréciez-vous le plus dans l'application ?
                         <br> (Choix multiples)
                     </p>
+
+                    <!-- Error message -->
+                    <div class="error-message"></div>
 
                     <label for="task_management">
                         <input type="checkbox" id="task_management" name="feature" value="task_management">
@@ -127,15 +135,25 @@
                     </label>
                 </fieldset>
 
-                <button type="submit" class="button-action">Afficher les résultats</button>
+                <button type="button" class="next-btn">Afficher les résultats</button>
             </form>
         </div>
     </section>
     
     <!-- Results -->
     <section id="results">
-
+        <div class="card" id="card-result">
+            <h2>Résultats</h2>
+            <p>Merci pour vos réponses. Voici le récapitulatif:</p>
+            <ul>
+                <li>Question 1- Évaluation: <span id="result-q1"></span></li>
+                <li>Question 2- Recommandation: <span id="result-q2"></span></li>
+                <li>Question 3- Fonctionnalités préférées: <span id="result-q3"></span></li>
+            </ul>
+        </div>
     </section>
-    
+
+    <!-- Scripts JS -->
+    <script src="script.js"></script>
 </body>
 </html>
