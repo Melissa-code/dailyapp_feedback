@@ -1,18 +1,32 @@
-# <img src="images/favicon_question.png" alt="DailyApp Feedback" width="30"> DailyApp Feedback
+# <img src="images/favicon_question.png" alt="DailyApp Feedback favicon" width="30"> DailyApp Feedback
+**DailyApp Feedback** est une application web interactive qui permet de recueillir facilement les retours des utilisateurs de DailyApp, application mobile destinée à faciliter l’organisation quotidienne et le suivi des habitudes.
 
-- Questionnaire interactif pour collecter les retours utilisateurs sur l'application DailyApp
+
+Elle propose un **questionnaire en trois étapes** (note, recommandation, fonctionnalités préférées) et présente les **résultats** sous forme de graphiques dynamiques et visuels (histogrammes et camembert).
+
+**Ce projet met en avant** :
+- Une navigation fluide et progressive (question par question).
+- Une expérience utilisateur soignée (design responsive et animations).
+- Des visualisations de données claires grâce à Chart.js.
+
+**L’objectif** est de fournir un outil simple, efficace et moderne pour analyser la satisfaction des utilisateurs et leurs attentes.
 
 ## Tester le sondage en ligne 
 
-- Cliquer **ici** pour réaliser le sondage : [DailyApp Feedback](https://dailyappfeedback.netlify.app/)
+- Cliquer sur le lien suivant pour réaliser le sondage : [DailyApp Feedback](https://dailyappfeedback.netlify.app/)
 
 ## Aperçus 
 
-<img src="images/home.svg" alt="Accueil" >
-<img src="images/Q1.svg" alt="Question 1" >
-<img src="images/Q2.svg" alt="Question 2" >
-<img src="images/Q3.svg" alt="Question 3" >
-<img src="images/results.svg" alt="Résultats" >
+<div style="display:flex; gap: 5px; margin: 5px 5px;">
+    <img src="images/home.svg" alt="Accueil" >
+    <img src="images/Q1.svg" alt="Question 1" >
+</div>
+
+<div style="display:flex; gap: 5px; margin: 5px 5px;">
+    <img src="images/Q2.svg" alt="Question 2" >
+    <img src="images/Q3.svg" alt="Question 3" >
+    <img src="images/results.svg" alt="Résultats" >
+</div>
 
 ## Fonctionnalités
 
@@ -24,9 +38,9 @@
 
 ## Questions du questionnaire
 
-1. **Q1**: Évaluation globale: note de 1 à 5 étoiles
-2. **Q2**: Recommandation: question Oui/Non
-3. **Q3**: Fonctionnalités préférées: sélection multiple avec option "Autre" (champ texte)
+1. **Q1 Évaluation globale**: note de 1 à 5 étoiles
+2. **Q2 Recommandation**: question Oui/Non
+3. **Q3 Fonctionnalités préférées**: sélection multiple avec option "Autre" (champ texte)
 
 ## Technologies utilisées
 
@@ -58,12 +72,12 @@ dailyapp-feedback/
 - Le projet est déployé avec **Netlify**
 
 - Workflow pour déployer à nouveau :
-- Vérifier que les derniers changements sont bien sur main
-- Choisir la branche main comme source
+    - Vérifier que les derniers changements sont bien sur main
+    - Choisir la branche main comme source
 
 ## Workflow Git et GitHub
 
-- Utilisation du workflow Git standard avec branches par User Story
+- Utilisation du workflow Git standard avec **branches par User Story**
 
 **Conventions de commits** :
 - **feat**: ajout d’une fonctionnalité
@@ -95,9 +109,9 @@ Suivi de l’avancement via un tableau Kanban :
 
 ## Types de graphiques
 
-- **Q1**: Histogramme vertical (évaluation par étoiles)
-- **Q2**: Graphique en camembert (recommandation Oui/Non)
-- **Q3**: Histogramme horizontal (fonctionnalités sélectionnées)
+- **Q1 Histogramme vertical**  (évaluation par étoiles)
+- **Q2 Graphique en camembert** (recommandation Oui/Non)
+- **Q3 Histogramme horizontal** (fonctionnalités sélectionnées)
 
 ## Améliorations
 
